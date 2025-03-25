@@ -1,0 +1,40 @@
+### Get all persons
+GET http://localhost:3001/api/persons
+
+### Get person by ID (valid)
+GET http://localhost:3001/api/persons/1
+
+### Get person by ID (invalid)
+GET http://localhost:3001/api/persons/999
+
+### Get info page
+GET http://localhost:3001/info
+
+### Delete person by ID
+DELETE http://localhost:3001/api/persons/2
+
+### Add new person (valid)
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Grace Hopper",
+  "number": "123-456789"
+}
+
+### Add person with missing name
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "number": "999-9999"
+}
+
+### Add person with duplicate name
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Arto Hellas",
+  "number": "555-555"
+}
